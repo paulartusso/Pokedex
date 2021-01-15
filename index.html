@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Poke</title>
+        <script src="https://kit.fontawesome.com/424ef3d923.js" crossorigin="anonymous"></script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/poke.css">
+    </head>
+    <body>
+        <div class="background">
+
+            <!--LEFT SIDE OF THE POKEDEX-->
+            <div class="left-side-shadow left-borders"> <!--Works as shadow and container-->
+
+                <div class="left-side-top left-borders">
+
+                    <!--Here goes the "header"-->
+                    <div class="header">
+                    <!--lightblue-->    
+                        <div class="lights-container">
+                            <div class="visor">
+                                <div class="reflex"></div>
+                            </div>
+                    <!--red, green, yellow lights-->   
+                        <div class="lights-container">
+                            <div class="lights first"></div>
+                            <div class="lights second"></div>
+                            <div class="lights third"></div>
+                        </div>     
+                        </div>
+                    </div>
+
+                    <!--Display container-->
+                    <div class="display-container">
+                        <div class="display">
+                            <div class="row-container">
+                                <div class="dots"></div>
+                                <div class="dots"></div>
+                            </div>
+                            <div class="poke-img-container"></div></div>
+                        <div class="counter-container">
+                            <div class="round-button"></div>
+                            <div class="counter"></div>
+                            <div class="controller">
+                                <div class="up-down">
+                                    <button class="control-details">
+                                        <i class="fas fa-caret-up"></i>
+                                    </button>
+                                </div>
+                                <div class="center">
+                                    <button class="control-details shad">
+                                        <i class="fas fa-caret-left"></i>
+                                    </button>
+                                    <button class="control-details center-shad"></button>
+                                    <button class="control-details">
+                                        <i class="fas fa-caret-right"></i>
+                                    </button>
+                                </div>
+                                <div class="up-down">
+                                    <button class="control-details shad">
+                                        <i class="fas fa-caret-down"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--CILINDER-->
+            <div class="cylinder">
+                <div class="cylinder-top"></div>
+            </div>
+
+            <!--RIGHT SOLAPA OF THE POKEDEX-->
+            <div class="right-side-shadow">
+                <div class="right-side-top">
+                    <div class="name-display"></div>
+                    <input type="text" class="input" placeholder="Search pokemon by number">
+                    
+                    <!--Buttons container-->
+                    <div class="button-container">
+                        <div class="caret-button-container">
+                            <button>
+                                <i class="fas fa-caret-left"></i>
+                            </button>
+                            <button>
+                                <i class="fas fa-caret-right"></i>
+                            </button>
+                        </div>
+                        <button class="random-button">
+                            RANDOM
+                        </button>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
