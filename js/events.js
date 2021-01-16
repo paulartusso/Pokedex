@@ -3,6 +3,10 @@ const search = () =>{
     if(pokeName !== ""){
         pokeName.innerHTML = "";
     }
+    let counterId = document.querySelector("#counter");
+    if(counterId !== ""){
+        counterId.innerHTML = "";
+    }
     let index = document.querySelector("#search-input").value;
     let button = document.querySelector("#search-button");
     button.classList.toggle("pressed");
@@ -28,15 +32,18 @@ const getPoke = () =>{
     let nameDisplay = document.querySelector("#name-display");
     let pokeName = document.querySelector("#poke-name");
     pokeName.classList.add("name");
-    let imgContainer = document.querySelector(".poke-img-container");
     let pokeImage = document.querySelector("#poke-image");
-    console.log(baseUrl);
+    let counterId = document.querySelector("#counter");
+    let id = document.createElement("p");
+    id.classList.add("counter-id");
     axios.get(baseUrl + index)
     .then(res => {
         pokeName.innerHTML = res.data.name;
         nameDisplay.appendChild(pokeName);
         pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`
         pokeImage.classList.add("img");
+        id.innerHTML = res.data.id;
+        counterId.appendChild(id);
     });
 }
 

@@ -111,7 +111,7 @@
 }
 .poke-img-container{
     border: 3px solid rgb(114, 114, 114);
-    background-color: #ffffff;
+    background-image: linear-gradient(#dcebeb, #baebeb);
     border-radius: 10px;
     width: 200px;
     height: 140px;
@@ -149,6 +149,9 @@
     border-radius: 5px;
     box-shadow: 1px 1px 12px -1px #4f535a inset;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .controller{
@@ -236,6 +239,7 @@
     padding: 12px;
     box-sizing: border-box;
     margin-top: 75px;
+    text-align: center;
 }
 
 .input{
@@ -302,6 +306,11 @@ button i{
 
 .img{
     width: 150px;
-    height: 100px;
+    height: 120px;
     overflow: hidden;
+}
+
+.counter-id{
+    font-size: 24px;
+    text-align: center;
 }
