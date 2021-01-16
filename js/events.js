@@ -7,7 +7,7 @@ const search = () =>{
     if(counterId !== ""){
         counterId.innerHTML = "";
     }
-    let index = document.querySelector("#search-input").value;
+    let index = document.querySelector("#search-input").value.toLowerCase();
     let button = document.querySelector("#search-button");
     button.classList.toggle("pressed");
     if(index == "" || index > 300){
@@ -27,23 +27,24 @@ const ShowErrorMessage = () =>{
 }
 
 const getPoke = () =>{
-    let index = document.querySelector("#search-input").value;
+    let index = document.querySelector("#search-input").value.toLowerCase();
     let baseUrl = "https://pokeapi.co/api/v2/pokemon/";
     let nameDisplay = document.querySelector("#name-display");
     let pokeName = document.querySelector("#poke-name");
     pokeName.classList.add("name");
     let pokeImage = document.querySelector("#poke-image");
     let counterId = document.querySelector("#counter");
-    let id = document.createElement("p");
-    id.classList.add("counter-id");
+    let counter = document.createElement("p");
+    counter.classList.add("counter-id");
     axios.get(baseUrl + index)
     .then(res => {
+        let id = res.data.id;
         pokeName.innerHTML = res.data.name;
         nameDisplay.appendChild(pokeName);
-        pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`
+        pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
         pokeImage.classList.add("img");
-        id.innerHTML = res.data.id;
-        counterId.appendChild(id);
+        counter.innerHTML = id;
+        counterId.appendChild(counter);
     });
 }
 
