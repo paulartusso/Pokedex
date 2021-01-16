@@ -4,7 +4,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Poke</title>
         <script src="https://kit.fontawesome.com/424ef3d923.js" crossorigin="anonymous"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" 
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./styles/main.css">
         <link rel="stylesheet" href="./styles/poke.css">
@@ -40,7 +41,10 @@
                                 <div class="dots"></div>
                                 <div class="dots"></div>
                             </div>
-                            <div class="poke-img-container"></div></div>
+                            <div class="poke-img-container">
+                                <img src="" id="poke-image">
+                            </div>
+                        </div>
                         <div class="counter-container">
                             <div class="round-button"></div>
                             <div class="counter"></div>
@@ -78,8 +82,10 @@
             <!--RIGHT SOLAPA OF THE POKEDEX-->
             <div class="right-side-shadow">
                 <div class="right-side-top">
-                    <div class="name-display"></div>
-                    <input type="text" class="input" placeholder="Search pokemon by number">
+                    <div class="name-display" id="name-display">
+                        <p id="poke-name"></p>
+                    </div>
+                    <input type="text" class="input" id="search-input" placeholder="Search by number or name">
                     
                     <!--Buttons container-->
                     <div class="button-container">
@@ -91,11 +97,13 @@
                                 <i class="fas fa-caret-right"></i>
                             </button>
                         </div>
-                        <button class="random-button">
-                            RANDOM
+                        <button class="random-button" id="search-button" onclick="search()">
+                            SEARCH
                         </button>
                     </div>
             </div>
         </div>
+
+        <script src="js/events.js"></script>
     </body>
 </html>

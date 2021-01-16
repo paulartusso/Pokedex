@@ -116,6 +116,9 @@
     width: 200px;
     height: 140px;
     box-shadow: -2px -1px 12px -4px #868585 inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /**COUNTER PLACE*/
@@ -132,7 +135,7 @@
 .round-button{
     width: 50px;
     height: 50px;
-    background: radial-gradient( #1e48ee,  #183bc5);
+    background: radial-gradient(#3258f1,  #1e40cc,  #183bc5);
     border-radius: 50%;
     border-left: 2px solid #071342;
     border-bottom: 2px solid #071342;
@@ -230,6 +233,8 @@
     border: 1px solid rgba(43, 43, 43, 0.329);
     border-radius: 9px;
     box-shadow: 1px 2px 12px 3px #868585 inset;
+    padding: 12px;
+    box-sizing: border-box;
     margin-top: 75px;
 }
 
@@ -269,14 +274,34 @@ button i{
 }
 
 .random-button{
-    width: 65%;
+    width: 60%;
     border-radius: 4px;
     font-family: "Play", sans-serif;
     font-size: 20px;
-    font-weight: 600;
+    color: #b9b9b9;
     padding: 3px;
     border: none;
-    border-left: 2px solid #3a0303;
-    border-bottom: 2px solid #3a0303;
-    background: linear-gradient(#aa173c, #60071d);
+    border-left: 2px solid #272323;
+    border-bottom: 4px solid #272323;
+    background: linear-gradient(#5f5b5c, #2e2c2c);
+}
+
+.pressed{
+    box-shadow: 1px 1px 12px -1px #4f535a inset;
+}
+
+.hidden{
+    display: none;
+}
+
+.name{
+    text-align: center;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.img{
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
 }

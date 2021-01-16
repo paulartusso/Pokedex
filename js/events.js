@@ -1,0 +1,61 @@
+const search = () =>{
+    let pokeName = document.querySelector("#poke-name");
+    if(pokeName !== ""){
+        pokeName.innerHTML = "";
+    }
+    let index = document.querySelector("#search-input").value;
+    let button = document.querySelector("#search-button");
+    button.classList.toggle("pressed");
+    if(index == "" || index > 300){
+        ShowErrorMessage();
+    } else {
+        getPoke();
+    }
+}
+
+const ShowErrorMessage = () =>{
+    let nameDisplay = document.querySelector("#name-display");
+    let noMatch = document.createElement("p");
+    noMatch.innerHTML = "There's no match. Try again!"
+    nameDisplay.appendChild(noMatch)
+    setTimeout(function(){ 
+        noMatch.classList.add("hidden"); }, 2000);
+}
+
+const getPoke = () =>{
+    let index = document.querySelector("#search-input").value;
+    let baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+    let nameDisplay = document.querySelector("#name-display");
+    let pokeName = document.querySelector("#poke-name");
+    pokeName.classList.add("name");
+    let imgContainer = document.querySelector(".poke-img-container");
+    let pokeImage = document.querySelector("#poke-image");
+    console.log(baseUrl);
+    axios.get(baseUrl + index)
+    .then(res => {
+        pokeName.innerHTML = res.data.name;
+        nameDisplay.appendChild(pokeName);
+        pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`
+        pokeImage.classList.add("img");
+    });
+}
+
+//** normal: '#A8A77A',
+//	fire: '#EE8130',
+//	water: '#6390F0',
+//	electric: '#F7D02C',
+/*	grass: '#7AC74C',
+	ice: '#96D9D6',
+	fighting: '#C22E28',
+	poison: '#A33EA1',
+	ground: '#E2BF65',
+	flying: '#A98FF3',
+	psychic: '#F95587',
+	bug: '#A6B91A',
+	rock: '#B6A136',
+	ghost: '#735797',
+	dragon: '#6F35FC',
+	dark: '#705746',
+	steel: '#B7B7CE',
+    fairy: '#D685AD',
+*/
