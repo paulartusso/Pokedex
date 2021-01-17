@@ -1,3 +1,15 @@
+@media (max-width: 600px) {
+    .cilinder{
+        display:none;
+    }
+    .right-side-shadow{
+        display: none;
+    }
+    .display-container{
+        display: none !important;
+    }
+}
+
 
 /*LEFT SIDE*/
 

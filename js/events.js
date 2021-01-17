@@ -10,7 +10,7 @@ const search = () =>{
     let index = document.querySelector("#search-input").value.toLowerCase();
     let button = document.querySelector("#search-button");
     button.classList.toggle("pressed");
-    if(index == "" || index > 300){
+    if(index == "" || index < 1 || index > 300){
         ShowErrorMessage();
     } else {
         getPoke();
